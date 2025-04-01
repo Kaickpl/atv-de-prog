@@ -1,0 +1,73 @@
+igual :: Int -> Int -> Int -> Int
+igual a b c
+    | a == b = 2
+    | b == c = 2
+    | a == c = 2
+    | a == b && b == c = 3
+    | otherwise = 0
+-- media 
+maior ::  Int -> Int -> Int -> Int
+maior a b c
+    | div soma 3 > a && div soma  3 > b && div soma  3 > c = 3
+    | div soma  3 > a && div soma  3 > b = 2
+    | div soma  3 > b && div soma   3 > c = 2
+    | div soma  3 > a && div soma  3 > c = 2
+    | a > div soma  3 = 1
+    | b > div soma  3 = 1
+    | c > div soma  3 = 1
+    | otherwise = 0
+    where
+        soma = a+b+c
+-- potencia de 2
+pot :: Int -> Int
+pot a = a * a
+-- potencia 4
+pot4 :: Int -> Int
+pot4 a = pot a *pot a
+-- ou exclusivo
+
+-- segundo garu
+x1 :: Float -> Float -> Float -> Float
+x1 x y z =  (- y +  sqrt delta  )/ (2*x)
+    where
+        delta = y * y- 4 *x * z
+x2 :: Float -> Float -> Float -> Float
+x2 x y z =  (- y -   sqrt delta)/ (2*x)
+    where delta = y * y - 4 *x * z
+-- recursão
+somare :: Int -> Int -> Int
+somare n m = sum [n .. m]
+-- multiplo
+mult :: Int -> Int -> Int -> [Int]
+mult n1 n2 n3 = [x|x <- [n1 .. n2 ], x `mod` n3 == 0]
+
+
+
+
+
+
+
+
+
+main :: IO()
+main = do
+    let a = 1
+    let b = 2
+    let c = 3
+    let x = 3
+    let y = -15
+    let z = 12
+    let n = 1
+    let m = 3
+    let n1 = 1
+    let n2 = 10
+    let n3 = 3
+    print ("tem  " ++ show (igual a b c)++ " valores")
+    print (maior a b c)
+    print (pot a)
+    print (pot4 a)
+    print (x1 x y z )
+    print (x2 x y z )
+    print (somare n m )
+    print (mult n1 n2 n3)
+    
