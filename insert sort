@@ -1,0 +1,15 @@
+inserir :: Ord a => a -> [a] -> [a]
+inserir x [] = [x]
+inserir x (y:ys)
+    | x <= y = x : y : ys
+    | otherwise = y : inserir x ys
+
+
+sort :: Ord a => [a] -> [a]
+sort [] = []
+sort (x:xs) = inserir x (sort xs)
+
+main :: IO()
+main = do
+    let a = [10,9,8,7,6,5,4,3,2,1,0]
+    print(sort a )
