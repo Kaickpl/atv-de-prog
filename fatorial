@@ -1,0 +1,7 @@
+fato :: Int -> Int
+fato 0 = 1
+fato n = n * fato (n-1)
+main :: IO()
+main = do
+    let n = 10
+    print(fato n)
